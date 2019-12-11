@@ -1,5 +1,6 @@
 package com.example.lingyajun.firstapplication.arithmetic
 
+import java.sql.DriverManager.println
 import kotlin.math.pow
 
 /**

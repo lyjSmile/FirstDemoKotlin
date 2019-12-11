@@ -1,10 +1,7 @@
 package com.example.lingyajun.firstapplication
 
-import com.example.lingyajun.firstapplication.arithmetic.NarcissisticNumber
-import com.example.lingyajun.firstapplication.jsondemo.Man
-import com.google.gson.Gson
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import com.example.lingyajun.firstapplication.arithmetic.NodeTest
+import com.example.lingyajun.firstapplication.arithmetic.TreeClass
 
 object MainTest {
     val print = { name: String ->
@@ -14,30 +11,22 @@ object MainTest {
 
     @JvmStatic
     fun main(args: Array<String>) {
-//        print("凌亚军")
-//        getView(ViewType.TypeBlue).showView()
-//       Foreach.testForEach()
-//        ExpendMethod.test()
-//        println(HeroGalen() vs HeroJs())
-//        val manJson = Gson().toJson(Man())
-//        println(manJson)
-//        println(Gson().fromJson(manJson,Man::class.java).name.toString())
-//        NarcissisticNumber.run()
-        val job = launch {
-            repeat(100){
-                println("job 启动$it")
-                delay(500)
-            }
-        }
+        val node = NodeTest.ListNode(1)
+        val node2 =  NodeTest.ListNode(2)
+        val node3 =  NodeTest.ListNode(3)
+        val node4 =  NodeTest.ListNode(4)
+        val node5 =  NodeTest.ListNode(5)
+        val node6 =  NodeTest.ListNode(6)
+        node.next = node2
+        node2.next = node3
+        node3.next = node4
+        node4.next = node5
+        node5.next = node6
+        node6.next = node
 
-        val job1 = launch {
-            println("job1启动")
-            repeat(100){
-                println("job1启动$it")
-                delay(500)
-            }
-        }
-        Thread.sleep(40000)
-        job.cancel()
+//       val isLoop =  NodeTest().judgeNodeLoop(node)
+//        println(isLoop)
+//        TreeClass().testTree()
+        TreeClass.testMaxDepth()
     }
 }
